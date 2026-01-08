@@ -1,13 +1,41 @@
-# Network Security MLOps Project
+# Network Security Phishing Detection MLOps Project
 
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A production-ready machine learning project for network security analysis with complete MLOps pipeline implementation.
+A complete end-to-end MLOps project for detecting phishing websites using machine learning with FastAPI, Docker, and CI/CD pipeline.
 
 ## 📋 Table of Contents
 - [Overview](#overview)
+- [Features](#features)
 - [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Docker Deployment](#docker-deployment)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Contributing](#contributing)
+
+## 🎯 Overview
+
+This project implements a complete MLOps pipeline for phishing website detection. It includes data ingestion from MongoDB, data validation, transformation, model training, evaluation, and deployment via FastAPI with Docker containerization.
+
+## 🚀 Features
+
+- **Complete ML Pipeline**: Data ingestion → Validation → Transformation → Training → Evaluation → Deployment
+- **MongoDB Integration**: Automated data ingestion from MongoDB Atlas
+- **Data Validation**: Schema validation and data drift detection using Kolmogorov-Smirnov test
+- **Feature Engineering**: KNN imputation for missing values
+- **Model Training**: Multiple algorithms (RandomForest, DecisionTree, GradientBoosting, etc.)
+- **Model Evaluation**: F1-score, Precision, Recall metrics
+- **REST API**: FastAPI for model serving
+- **Batch Prediction**: CSV file upload support
+- **Docker Support**: Containerized deployment
+- **CI/CD Pipeline**: GitHub Actions for automated testing and deployment
+- **Logging & Exception Handling**: Comprehensive logging and custom exceptions
+
+## 📁 Project Structure
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)

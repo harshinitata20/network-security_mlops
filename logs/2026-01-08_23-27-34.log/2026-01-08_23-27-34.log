@@ -1,0 +1,47 @@
+[2026-01-08 23:27:34,609] INFO - Note: NumExpr detected 22 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+[2026-01-08 23:27:34,610] INFO - NumExpr defaulting to 16 threads.
+[2026-01-08 23:27:36,517] INFO - Started the training pipeline
+[2026-01-08 23:27:36,517] INFO - Entered the start_data_ingestion method of TrainingPipeline class
+[2026-01-08 23:27:36,517] INFO - Getting the data from MongoDB
+[2026-01-08 23:27:36,517] INFO - Starting data ingestion
+[2026-01-08 23:27:38,560] INFO - Shape of dataframe: (11055, 31)
+[2026-01-08 23:27:38,642] INFO - Performed train test split on the dataframe
+[2026-01-08 23:27:38,686] INFO - Exporting train and test file path.
+[2026-01-08 23:27:38,768] INFO - Exported train and test file path.
+[2026-01-08 23:27:38,769] INFO - Data ingestion artifact: DataIngestionArtifact(trained_file_path='Artifacts\\01_08_2026_23_27_34\\data_ingestion\\ingested\\train.csv', test_file_path='Artifacts\\01_08_2026_23_27_34\\data_ingestion\\ingested\\test.csv')
+[2026-01-08 23:27:38,769] INFO - Got the train_set and test_set from MongoDB
+[2026-01-08 23:27:38,769] INFO - Exited the start_data_ingestion method of TrainingPipeline class
+[2026-01-08 23:27:38,770] INFO - Entered the start_data_validation method of TrainingPipeline class
+[2026-01-08 23:27:38,804] INFO - Required number of columns: 31
+[2026-01-08 23:27:38,804] INFO - Data frame has columns: 31
+[2026-01-08 23:27:38,804] INFO - Required number of columns: 31
+[2026-01-08 23:27:38,804] INFO - Data frame has columns: 31
+[2026-01-08 23:27:38,979] INFO - Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='Artifacts\\01_08_2026_23_27_34\\data_ingestion\\ingested\\train.csv', valid_test_file_path='Artifacts\\01_08_2026_23_27_34\\data_ingestion\\ingested\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts\\01_08_2026_23_27_34\\data_validation\\drift_report\\report.yaml')
+[2026-01-08 23:27:38,980] INFO - Performed the data validation operation
+[2026-01-08 23:27:38,980] INFO - Exited the start_data_validation method of TrainingPipeline class
+[2026-01-08 23:27:38,980] INFO - Entered the start_data_transformation method of TrainingPipeline class
+[2026-01-08 23:27:38,980] INFO - Starting data transformation
+[2026-01-08 23:27:39,019] INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-01-08 23:27:39,019] INFO - Initialized KNNImputer with n_neighbors=3
+[2026-01-08 23:27:39,043] INFO - Entered the save_object method of utils
+[2026-01-08 23:27:39,048] INFO - Exited the save_object method of utils
+[2026-01-08 23:27:39,048] INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\01_08_2026_23_27_34\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\01_08_2026_23_27_34\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\01_08_2026_23_27_34\\data_transformation\\transformed\\test.npy')
+[2026-01-08 23:27:39,050] INFO - Performed the data transformation operation
+[2026-01-08 23:27:39,050] INFO - Exited the start_data_transformation method of TrainingPipeline class
+[2026-01-08 23:27:39,050] INFO - Entered the start_model_trainer method of TrainingPipeline class
+[2026-01-08 23:27:39,900] INFO - Entered the save_object method of utils
+[2026-01-08 23:27:39,933] INFO - Exited the save_object method of utils
+[2026-01-08 23:27:39,934] INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\01_08_2026_23_27_34\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9925010133765707, precision_score=0.9900930044480388, recall_score=0.9949207639171068), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9734726688102894, precision_score=0.9664804469273743, recall_score=0.9805668016194332))
+[2026-01-08 23:27:39,938] INFO - Performed the model training operation
+[2026-01-08 23:27:39,938] INFO - Exited the start_model_trainer method of TrainingPipeline class
+[2026-01-08 23:27:39,938] INFO - Entered the start_model_evaluation method of TrainingPipeline class
+[2026-01-08 23:27:40,181] INFO - Model evaluation metrics: ClassificationMetricArtifact(f1_score=0.9886694723211396, precision_score=0.9853202129375705, recall_score=0.9920415786909209)
+[2026-01-08 23:27:40,183] INFO - Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=0.9886694723211396, report_file_path='Artifacts\\01_08_2026_23_27_34\\model_evaluation\\report.yaml', trained_model_file_path='Artifacts\\01_08_2026_23_27_34\\model_trainer\\trained_model\\model.pkl')
+[2026-01-08 23:27:40,187] INFO - Performed the model evaluation operation
+[2026-01-08 23:27:40,187] INFO - Exited the start_model_evaluation method of TrainingPipeline class
+[2026-01-08 23:27:40,187] INFO - Entered the start_model_pusher method of TrainingPipeline class
+[2026-01-08 23:27:40,187] INFO - Entered initiate_model_pusher method of ModelPusher class
+[2026-01-08 23:27:40,212] INFO - Model pusher artifact: ModelPusherArtifact(saved_model_path='saved_models\\01_08_2026_23_27_34\\model.pkl', model_file_path='Artifacts\\01_08_2026_23_27_34\\model_pusher\\model.pkl')
+[2026-01-08 23:27:40,212] INFO - Performed the model pusher operation
+[2026-01-08 23:27:40,212] INFO - Exited the start_model_pusher method of TrainingPipeline class
+[2026-01-08 23:27:40,212] INFO - Training pipeline completed successfully

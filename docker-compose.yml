@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  networksecurity:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_DB_URL=${MONGO_DB_URL}
+    volumes:
+      - ./saved_models:/app/saved_models
+      - ./Artifacts:/app/Artifacts
+    restart: unless-stopped
