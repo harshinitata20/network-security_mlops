@@ -1,0 +1,12 @@
+﻿name: Network Security MLOps - Disabled
+
+on:
+  # Temporarily disabled - enable when ready for CI/CD
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Placeholder
+      run: echo "Workflow disabled"
